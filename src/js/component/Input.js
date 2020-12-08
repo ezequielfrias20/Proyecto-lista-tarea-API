@@ -14,18 +14,27 @@ function Input(props) {
 						setWord(e.target.value);
 					}}
 					type="text"
-					className="todo-input"
+					className="form-control"
+					onKeyDown={e => {
+						if (e.key == "Enter") {
+							setList([word, ...list]);
+							setWord("");
+							e.preventDefault();
+							e.stopPropagation();
+						}
+					}}
 				/>
-				<button
+				{/* <button
 					className="todo-button"
 					type="button"
 					onClick={e => {
 						setList([word, ...list]);
+						setWord("");
 					}}>
 					<i className="fas fa-plus-square" />
-				</button>
+				</button> */}
 			</form>
-			<List todo={list} />
+			<List todo={list} setTodo={setList} />
 		</React.Fragment>
 	);
 }
