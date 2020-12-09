@@ -10,6 +10,7 @@ function Input(props) {
 			<form>
 				<input
 					value={word}
+					placeholder="Que tarea tienes pendiente?"
 					onChange={e => {
 						setWord(e.target.value);
 					}}

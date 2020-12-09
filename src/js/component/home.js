@@ -10,7 +10,7 @@ export class Home extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<h1>Todos</h1>
+				<h1 className="todos">Todos</h1>
 				<Input />
 			</div>
 		);

@@ -12,16 +12,21 @@ export function List({ todo, setTodo }) {
 
 	return (
 		<div className="container">
-			<ul className="list-group list-group-flush">
+			<ul className="list-group list-group-flush mt-2">
 				{todo.map((maduro, index) => {
 					return (
-						<li
-							className="list-group-item"
-							key={index}
-							onClick={() => borrarTarea(index)}>
-							{maduro}
-							<div>{"x"}</div>
-						</li>
+						<>
+							<h4>Tarea {index + 1} :</h4>
+							<li className="list-group-item mt-2" key={index}>
+								{maduro}
+							</li>
+							<button
+								type="button"
+								className="btn btn-danger"
+								onClick={() => borrarTarea(index)}>
+								eliminar
+							</button>
+						</>
 					);
 				})}
 			</ul>
