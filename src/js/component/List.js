@@ -1,24 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export function List({ todo, setTodo }) {
-	function borrarTarea(index) {
-		setTodo(
-			todo.filter((tarea, i) => {
-				return i != index;
-			})
-		);
-	}
-
+export function List({ todo, setTodo, borrarTarea }) {
 	return (
 		<div className="container">
 			<ul className="list-group list-group-flush mt-2">
-				{todo.map((maduro, index) => {
+				{todo.map((tarea, index) => {
 					return (
 						<>
 							<h4>Tarea {index + 1} :</h4>
 							<li className="list-group-item mt-2" key={index}>
-								{maduro}
+								{tarea.label}
 							</li>
 							<button
 								type="button"
@@ -35,6 +27,7 @@ export function List({ todo, setTodo }) {
 }
 
 List.propTypes = {
-	todo: PropTypes.array,
-	setTodo: PropTypes.func
+	todo: PropTypes.object,
+	setTodo: PropTypes.func,
+	borrarTarea: PropTypes.func
 };
