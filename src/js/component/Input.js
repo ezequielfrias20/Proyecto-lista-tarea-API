@@ -33,11 +33,7 @@ function Input(props) {
 		} else {
 			fetch(BASE_URL, {
 				method: "DELETE",
-				body: JSON.stringify(
-					list.filter((tarea, i) => {
-						return i != index;
-					})
-				),
+				body: [],
 				headers: {
 					"content-type": "application/json"
 				}
